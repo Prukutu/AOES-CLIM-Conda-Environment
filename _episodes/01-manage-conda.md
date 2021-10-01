@@ -155,7 +155,7 @@ $ python -m ipykernel install --user --name clim680 --display-name "Python (clim
 ~~~
 {: .language-bash}
 
-Now we will need to close our Jupyter notebook and get our COLA window back.  At the COLA prompt, type:
+*This should probably be removed* Now we will need to close our Jupyter notebook and get our COLA window back.  At the COLA prompt, type:
 ~~~
 $ conda activate clim680
 ~~~
