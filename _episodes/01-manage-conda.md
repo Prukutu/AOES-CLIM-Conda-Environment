@@ -104,7 +104,7 @@ We can install lots of packages by hand, but what we really want to do is make a
 
 Copy the file to your directory.
 ~~~
-$ cp ~kpegion/classes/fa2020/clim680-codes/environment.yml .
+$ cp /homes/nburls/CLIM680-env/environment.yml .
 ~~~
 {: .language-bash}
 
