@@ -3,7 +3,7 @@ title: "Assignment #2"
 teaching: 0
 exercises: 0
 questions:
-- ""
+- "How does one create a multi-panel plot?"
 objectives:
 - "Create a 12-panel plot of the climatology of your data "
 keypoints:
