@@ -5,9 +5,9 @@ exercises: 0
 questions:
 - ""
 objectives:
-- ""
+- "Create a 12-panel plot of the climatology of your data "
 keypoints:
-- ""
+- "Assigment due Oct 15th via BB"
 ---
 
 ## What am I expected to do?
