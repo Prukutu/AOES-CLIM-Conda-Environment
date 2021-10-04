@@ -16,7 +16,7 @@ Typically, we run Python on COLA by typing:
 ~~~
 $ module load anaconda/3
 ~~~
-{. :language-bash}
+{: .language-bash}
 
 Then we can run a Python interface like Jupyter, Spyder, or the standard text-based Python interface (these are called interpreters).
 The available Python packages (what we can import) and what version of those packages is available is controlled by the COLA system adminstration.
