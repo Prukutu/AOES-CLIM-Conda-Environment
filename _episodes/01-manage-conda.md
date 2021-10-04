@@ -87,9 +87,9 @@ $ conda list
 ~~~
 {: .language-bash}
 
-This list is very long.  But, we can use our Unix skills to help us -- the `grep` command:
+This list is very long.  We can list specific packages, or use wildcards to find packages whose name contains a particular string.
 ~~~
-$ conda list | grep xarray
+$ conda list xarray
 ~~~
 {: .language-bash}
 
@@ -98,7 +98,7 @@ xarray                    0.13.0                     py_0    conda-forge
 ~~~
 {: .output}
 
-We only have `xarray` version 0.13.0 (that was an update in 2019)!  How can we change that?  Since we are not the system administrator, we cannot change the system Python packages. We could email the system administrator, but we may have to wait and someone else may want a different version because their program uses an old feature.  Instead what we can do is to manage our own Python environment. The Python environment manager is called `conda`, so we refer to this as our `conda` environment.
+We only have `xarray` version 0.13.0 (that was an update from 2019)!  How can we change that?  Since we are not the system administrator, we cannot change the system Python packages. We could email the system administrator, but we may have to wait and someone else may want a different version because their program uses an old feature.  Instead what we can do is to manage our own Python environment. The Python environment manager is called `conda`, so we refer to this as our `conda` environment.
 
 We can install lots of packages by hand, but what we really want to do is make a list of Python packages we will commonly use and install all of those.  We have provided you a file called `environment.yml`.  It contains a collection of Python packages that are common to climate.  We will install those packages into an environment called clim680.  
 
@@ -139,16 +139,22 @@ $ conda activate clim680
 ~~~
 {: .language-bash}
 
-Now let's check if we have an updated version of `xarray`
+Do that, and let's check if we have an updated version of `xarray`
 ~~~
-$ conda list | grep xarray
+$ conda list xarray
 ~~~
 {: .language-bash}
 
 ~~~
- xarray                    0.16.1                     py_0    conda-forge
+ xarray                    0.18.2                     pyhd8ed1ab_0    conda-forge
 ~~~
 {: .output}
+
+Note we do not necessarily receive the very latest version. 
+One of the features of `conda` is that it checks for compatabilities among all installed software packages and tries to ensure that every version of each 
+will work correctly with all the other packages. 
+When you install a new Python package, `conda` may also download _dependencies_ - other packages that are required to run your new package.
+Also, sometimes `conda` will _downgrade_ the versions of packages already installed to maximize compatability.
 
 There is one more command we need to run in order to tell Jupyter about our new environment:
 
@@ -157,26 +163,42 @@ $ python -m ipykernel install --user --name clim680 --display-name "Python (clim
 ~~~
 {: .language-bash}
 
-*This should probably be removed* Now we will need to close our Jupyter notebook and get our COLA window back.  At the COLA prompt, type:
+This adds the new `clim680` environment to your list of available environments. To list all available environments:
+
 ~~~
-$ conda activate clim680
+$ conda env list
 ~~~
 {: .language-bash}
 
-Re-launch Jupyter. Open your notebook and click in the upper right corner where is says Python 3 and switch it to Python(clim680)
+A "cheat sheet" of common conda commands is [available for download](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html).
+
+
+Now we will need to close our Jupyter notebook for changes to be recognized, and get our COLA terminal window back.  At the COLA prompt, type:
+~~~
+$ conda deactivate
+~~~
+{: .language-bash}
+
+Re-launch Jupyter. Open your notebook, click in the upper right corner where is says Python 3 and switch it to Python(clim680).
+Verify that you now have the new version of `xarray` available to you in your Jupyter session:
+~~~
+import xarray
+!conda list xarray
+~~~
+{: .language-python}
 What do you see that is different?
 
 ### Do I have to do this everytime? 
 
-Theses are 1-time steps that you only have to do to setup a new environment. 
-From now on, you only have to select the environment you want for your notebook in Jupyter. 
+These are 1-time steps that you only have to do to setup a new environment. 
+From now on, you _should_ only have to select the environment you want for your notebook in Jupyter by changing the kernel. 
 
-If you run in a different Python interpreter, you will need to do the following before running Python:
+If you run in a different Python interpreter (e.g., Spyder or from the command line), you will need to do the following to access this environment before running Python:
 ~~~
 $ conda activate clim680
 ~~~
 {: .language-bash}
 
-In the future, you may want to create different environments for different projects. If you provied someone with an `environment.yml` file for your project, it will guarantee they can reproduce the environment you ran it in and be able to run your codes.
+In the future, you may want to create different environments for different projects. If you provied someone with a `*.yml` file for your project, it will guarantee they can reproduce the environment you ran it in and be able to run your codes.
 
-I've given you just enough information to get a better environment setup for this class, but there's lots more if you are interested.  The conda User's Guide is [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
+We've given you just enough information to get a better environment setup for this class, but there's lots more if you are interested.  The [conda User's Guide](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) can help.
