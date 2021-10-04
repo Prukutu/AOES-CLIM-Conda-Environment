@@ -1,14 +1,15 @@
 ---
 title: "Managing Your Python Environment"
-teaching: 0
+teaching: 30
 exercises: 0
 questions:
 - "What Python packages are available to me?"
 - "How do I control the packages that are available to me?"
-objectives:
-- ""
+objectives: 
+- "Learn how to create, select and manage conda environments."
 keypoints:
-- ""
+- "Conda environments allow you to install and manage Python packages to suit your needs." 
+- "Conda environments let you keep a stable set of software versions for your projects, so that code remains functional and backwards-compatible."
 ---
 
 Typically, we run Python on COLA by typing:
