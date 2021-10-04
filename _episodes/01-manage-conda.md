@@ -23,7 +23,7 @@ The available Python packages (what we can import) and what version of those pac
 
 ### Why do I care?
 
-Suppose I searched the internet for how to do something in Python and found cool package or feature I want to use, but its not available to me.  What if I shared a program with you that used a cool new feature that was not available to you? 
+Suppose we searched the internet for how to do something in Python and found cool package or feature to use, but its not available on our system.  What if I shared a program with you that used a cool new feature that was not available to you? 
 
 Here's an example: Search for `calculate correlation xarray dataset`. The top hit is: http://xarray.pydata.org/en/stable/generated/xarray.corr.html.
 
@@ -77,7 +77,7 @@ AttributeError: module 'xarray' has no attribute 'corr'
 
 ## Why doesn't this work?  I followed the example?
 
-The latest `xarray` documentation is for v0.16.1 (Sep 20, 2020).  The `xarray.cov` function and the `xarray.corr` functions were added in v0.16.0 (Jul 11, 2020).  How do I know this?  Click on the `What's new` in the `xarray` documentation and take a look.   How can I get this version of `xarray`?
+The latest `xarray` documentation is for v0.19.0 (23 July, 2021).  The `xarray.cov` function and the `xarray.corr` functions were added in v0.16.0 (Jul 11, 2020).  How do we know this?  Click on the ["What's new"](http://xarray.pydata.org/en/stable/whats-new.html#v0-16-0-2020-07-11) in the `xarray` documentation and take a look.  How can we get a more up-to-date version of `xarray`?
 
 ### What version of `xarray` are we running?
 
@@ -98,9 +98,9 @@ xarray                    0.13.0                     py_0    conda-forge
 ~~~
 {: .output}
 
-We only have `xarray` version 0.13.0!  How can we change that?  Since we are not the system administrator, we cannot change the system Python packages. We could email the system administrator, but we may have to wait and someone else may want a different version because their program uses an old feature.  Instead what we can do is to manage our own Python environment. The Python environment manager is called `conda`, so we refer to this as our `conda` environment.
+We only have `xarray` version 0.13.0 (that was an update in 2019)!  How can we change that?  Since we are not the system administrator, we cannot change the system Python packages. We could email the system administrator, but we may have to wait and someone else may want a different version because their program uses an old feature.  Instead what we can do is to manage our own Python environment. The Python environment manager is called `conda`, so we refer to this as our `conda` environment.
 
-We can install lots of packages by hand, but what we really want to do is make a list of Python packages we will commonly use and install all of those.  I have provided you a file called `environment.yml`.  It contains a collection of Python packages that are common to climate.  We will install those packages into an environment called clim680.  
+We can install lots of packages by hand, but what we really want to do is make a list of Python packages we will commonly use and install all of those.  We have provided you a file called `environment.yml`.  It contains a collection of Python packages that are common to climate.  We will install those packages into an environment called clim680.  
 
 Copy the file to your directory.
 ~~~
@@ -122,7 +122,9 @@ $ more environment.yml
 ~~~
 {: .language-bash}
 
-When we install the new environment, it will get the latest available versions of each package we listed in the environment file unless we specify a certain version. If we want to update to the latest version of our packages, we can run:
+Note that the file includes a `name` set to `clim680`. 
+When we install the new environment, it will get the latest available versions of each package we listed in the environment file unless we specify a certain version (e.g., as we have done for `python=3.6`) and give the new environment the name `clim680`. 
+If we later want to update to the latest version of our packages, we can run:
 
 ~~~
 $ conda env update -f environment.yml
