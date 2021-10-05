@@ -184,7 +184,7 @@ Re-launch Jupyter. Open your notebook, click in the upper right corner where is 
 Verify that you now have the new version of `xarray` available to you in your Jupyter session:
 ~~~
 import xarray
-!conda list xarray
+conda list xarray
 ~~~
 {: .language-python}
 What do you see that is different?
