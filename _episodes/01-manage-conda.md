@@ -1,7 +1,7 @@
 ---
 title: "Managing Your Python Environment"
 teaching: 45
-exercises: 0
+exercises: 30
 questions:
 - "What Python packages are available to me?"
 - "How do I control the packages that are available to me?"
