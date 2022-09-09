@@ -10,7 +10,11 @@
 carpentry: "swc"
 
 # Overall title for pages.
-title: "Working with Climate Data"
+title: "Managing Conda Environments"
+
+# Kramdown
+kramdown:
+  input: Kramdown
 
 # Life cycle stage of the lesson
 # possible values: "pre-alpha", "alpha", "beta", "stable"
