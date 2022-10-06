@@ -7,7 +7,7 @@ questions:
 objectives:
 - "Create a 12-panel plot of the climatology of your data "
 keypoints:
-- "Assigment due Oct 15th via BB"
+- "Assigment due Oct 13th via Blackboard"
 ---
 
 ## What am I expected to do?
